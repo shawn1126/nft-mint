@@ -1,229 +1,282 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 30px 80px;
+  background-image: url('/images/bg-light.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
+.secondWrapper {
+  background-image: url('/images/brown-bg.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
   width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  width: var(--max-width);
-  max-width: 100%;
-}
-
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
-}
-
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
-}
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 4rem 0;
-}
-
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.center::before,
-.center::after {
-  content: '';
-  left: 50%;
+.imgsWrapper {
   position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+  bottom: 0;
+  right: 0;
 }
 
-.logo {
+.manImg {
   position: relative;
-}
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
+.armImg {
+  position: absolute;
+  right: 90px;
+  bottom: 420px;
+  z-index: 1;
+}
+
+.fistImg {
+  position: absolute;
+  right: 450px;
+  bottom: 100px;
+  z-index: 1;
+}
+
+.contentWrapper {
+  padding-top: 130px;
+  padding-left: 120px;
+  position: relative;
+  z-index: 3;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.contentWrapper h1 span {
+  color: #A5564F;
+  font-size: 80px;
+  line-height: 104px;
+  display: block;
+}
+
+.contentWrapper h1 {
+  color: #FFF;
+  font-size: 120px;
+  line-height: 144px;
+  font-family: 'BespokeStencil-Extrabold';
+  font-weight: 800;
+}
+
+.contentWrapper p {
+  color: #D9D9D9;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 29px;
+  font-family: 'GeneralSans-Medium';
+  max-width: 518px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.btnWrapper button {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mintBtn:active,
+.connectBtn:active {
+  transform: translateY(2px);
+}
+
+.mintBtn:hover,
+.connectBtn:hover {
+  background-color: rgba(255, 255, 255, 0.931);
+
+}
+
+.priceBtn {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'GeneralSans-Medium';
+  background-color: transparent;
+
+  border: 2px solid rgba(255, 255, 255, 0.40);
+  background: rgba(183, 43, 43, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.mintBtn {
+  background-color: white;
+  color: #000;
+  font-family: 'GeneralSans-Bold';
+  font-weight: 700;
+  font-size: 18px;
+  backdrop-filter: blur(5px);
+  border: none;
+}
+
+.connectBtn {
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media(max-width:1550px) {
+  .pageWrapper {
+    padding: 20px 54px;
+  }
+
+  .manImg {
+    width: 502px;
+    height: 435px;
+  }
+
+  .fistImg {
+    width: 273px;
+    height: 323px;
+    right: 310px;
+    bottom: 80px;
+  }
+
+  .armImg {
+    width: 241px;
+    height: 293px;
+    bottom: 300px;
+    right: 70px
+  }
+
+
+
+  .contentWrapper h1 span {
+
+    font-size: 54px;
+    line-height: 60px;
+  }
+
+  .contentWrapper h1 {
+
+    font-size: 80px;
+    line-height: 96px;
+
+  }
+
+  .contentWrapper p {
+    font-size: 16px;
+    max-width: 518px;
+    margin-top: 14px;
+    margin-bottom: 40px;
+  }
+
+  .contentWrapper {
+    padding-top: 85px;
+    padding-left: 80px;
+
   }
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
+@media (max-width:768px) {
+  .pageWrapper {
+    padding: 0;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
+  .pageWrapper {
     display: flex;
     justify-content: center;
-    position: fixed;
-    width: 100%;
   }
 
-  .description p {
+  .contentWrapper {
+    padding-left: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
   }
 
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
+  .btnWrapper {
+    width: 100%;
+    flex: 1;
+    justify-content: start;
   }
 
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  .contentWrapper {
+    margin-top: 50px;
   }
-}
 
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
+  .contentWrapper h1 span {
+    font-size: 32px;
+    line-height: 35px;
   }
-  to {
-    transform: rotate(0deg);
+
+  .contentWrapper h1 {
+    font-size: 50px;
+    line-height: 57px;
   }
+
+  .contentWrapper p {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 300px;
+
+  }
+
+  .btnWrapper button {
+    width: 125px;
+    height: 45px;
+  }
+
+  .priceBtn {
+    font-size: 14px;
+  }
+
+  .mintBtn {
+    font-size: 14px;
+  }
+
+  .manImg {
+    width: 100vw;
+    height: auto;
+  }
+
+  .fistImg {
+    width: 150px;
+    height: auto;
+    left: -40px;
+    bottom: 80px;
+  }
+
+  .armImg {
+    width: 150px;
+    height: auto;
+    bottom: 130px;
+    right: -30px;
+    rotate: 15deg;
+  }
+
+  .imgsWrapper {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .secondWrapper {
+    background-image: url('/images/brown-bg-mob.png');
+    border-radius: 0px;
+  }
+
+
 }
